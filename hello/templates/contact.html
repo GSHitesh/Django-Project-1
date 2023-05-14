@@ -4,6 +4,7 @@
 
 {% block body %} 
 
+{% comment %} {% block strong %} {{}} {% endblock strong %} {% endcomment %}
 <div class="container-fluid my-0 mb-4">
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
         <div class="carousel-inner">
@@ -23,7 +24,7 @@
 </div>
 
 <div class="container">
-    <form method="post" action="/contact/"> 
+    <form method="post" action="/contact"> 
         {% comment %} if in views / is there in the endpoint desc, then here it should be /emd_point/ {% endcomment %}
         {% csrf_token %}
         <div class="form-group">
