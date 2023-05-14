@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %} 
+
+<div class="container-fluid my-0 mb-4">
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://source.unsplash.com/900x300/?phone" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</div>
+
+<div class="container">
+    <form method="post" action="/contact/"> 
+        {% comment %} if in views / is there in the endpoint desc, then here it should be /emd_point/ {% endcomment %}
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="name" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>    
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+          </div>            
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="desc">Please specify what you want to ask?</label>
+            <textarea class="form-control" id="desc" name="desc" row="3" placeholder="Enter your question"></textarea>
+          </div>
+          <div class="py-2">
+            <button class = "btn btn-primary" type = "submit">Submit</button>
+          </div>
+        
+      </form>
+</div>
+
+{% endblock body %}
